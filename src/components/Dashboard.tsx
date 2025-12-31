@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ToolCard from './ToolCard'
 import JsonParser from './JsonParser'
+import Footer from './Footer'
 
 function Dashboard() {
   const [selectedTool, setSelectedTool] = useState<string | null>(null)
@@ -56,7 +57,7 @@ function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-6xl mx-auto px-6 py-6">
@@ -66,7 +67,7 @@ function Dashboard() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-6 py-8">
+      <main className="flex-1 max-w-6xl mx-auto px-6 py-8 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {developerTools.map((tool) => (
             <ToolCard
@@ -77,6 +78,8 @@ function Dashboard() {
           ))}
         </div>
       </main>
+
+      <Footer />
     </div>
   )
 }
