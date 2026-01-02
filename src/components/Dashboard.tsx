@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ToolCard from './ToolCard'
 import JsonParser from './JsonParser'
+import Base64Encoder from './Base64Encoder'
 import Footer from './Footer'
 
 function Dashboard() {
@@ -54,6 +55,11 @@ function Dashboard() {
   // JSON Parser 선택 시 JsonParser 컴포넌트 렌더링
   if (selectedTool === 'json-parser') {
     return <JsonParser onBack={() => setSelectedTool(null)} />
+  }
+
+  // Base64 Encoder 선택 시 Base64Encoder 컴포넌트 렌더링
+  if (selectedTool === 'base64') {
+    return <Base64Encoder onBack={() => setSelectedTool(null)} />
   }
 
   return (
