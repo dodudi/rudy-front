@@ -3,6 +3,7 @@ import ToolCard from './ToolCard'
 import JsonParser from './JsonParser'
 import Base64Encoder from './Base64Encoder'
 import UrlEncoder from './UrlEncoder'
+import ColorPicker from './ColorPicker'
 import Footer from './Footer'
 
 function Dashboard() {
@@ -66,6 +67,11 @@ function Dashboard() {
   // URL Encoder 선택 시 UrlEncoder 컴포넌트 렌더링
   if (selectedTool === 'url-encoder') {
     return <UrlEncoder onBack={() => setSelectedTool(null)} />
+  }
+
+  // Color Picker 선택 시 ColorPicker 컴포넌트 렌더링
+  if (selectedTool === 'color-picker') {
+    return <ColorPicker onBack={() => setSelectedTool(null)} />
   }
 
   return (
