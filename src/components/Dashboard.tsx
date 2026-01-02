@@ -2,6 +2,7 @@ import { useState } from 'react'
 import ToolCard from './ToolCard'
 import JsonParser from './JsonParser'
 import Base64Encoder from './Base64Encoder'
+import UrlEncoder from './UrlEncoder'
 import Footer from './Footer'
 
 function Dashboard() {
@@ -60,6 +61,11 @@ function Dashboard() {
   // Base64 Encoder 선택 시 Base64Encoder 컴포넌트 렌더링
   if (selectedTool === 'base64') {
     return <Base64Encoder onBack={() => setSelectedTool(null)} />
+  }
+
+  // URL Encoder 선택 시 UrlEncoder 컴포넌트 렌더링
+  if (selectedTool === 'url-encoder') {
+    return <UrlEncoder onBack={() => setSelectedTool(null)} />
   }
 
   return (
