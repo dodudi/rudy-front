@@ -4,6 +4,7 @@ import JsonParser from './JsonParser'
 import Base64Encoder from './Base64Encoder'
 import UrlEncoder from './UrlEncoder'
 import ColorPicker from './ColorPicker'
+import RegexTester from './RegexTester'
 import Footer from './Footer'
 
 function Dashboard() {
@@ -72,6 +73,11 @@ function Dashboard() {
   // Color Picker 선택 시 ColorPicker 컴포넌트 렌더링
   if (selectedTool === 'color-picker') {
     return <ColorPicker onBack={() => setSelectedTool(null)} />
+  }
+
+  // Regex Tester 선택 시 RegexTester 컴포넌트 렌더링
+  if (selectedTool === 'regex-tester') {
+    return <RegexTester onBack={() => setSelectedTool(null)} />
   }
 
   return (
