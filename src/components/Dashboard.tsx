@@ -5,6 +5,7 @@ import Base64Encoder from './Base64Encoder'
 import UrlEncoder from './UrlEncoder'
 import ColorPicker from './ColorPicker'
 import RegexTester from './RegexTester'
+import TimestampConverter from './TimestampConverter'
 import Footer from './Footer'
 
 function Dashboard() {
@@ -78,6 +79,11 @@ function Dashboard() {
   // Regex Tester 선택 시 RegexTester 컴포넌트 렌더링
   if (selectedTool === 'regex-tester') {
     return <RegexTester onBack={() => setSelectedTool(null)} />
+  }
+
+  // Timestamp Converter 선택 시 TimestampConverter 컴포넌트 렌더링
+  if (selectedTool === 'timestamp') {
+    return <TimestampConverter onBack={() => setSelectedTool(null)} />
   }
 
   return (
